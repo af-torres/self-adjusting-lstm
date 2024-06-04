@@ -11,12 +11,12 @@ class Builder:
     def addPreCompileHook(self, hook: PreCompileHook) -> None:
         self.__precompile.append(hook)
 
-    def build(self, learning_rate: float) -> keras.Model:
+    def build(self, learningRate: float) -> keras.Model:
         model = keras.Sequential()
         for h in self.__precompile:
             model = h(model)
 
-        optimizer = keras.optimizers.Adam(learning_rate)
+        optimizer = keras.optimizers.Adam(learningRate)
         model.compile(optimizer=optimizer, loss="mean_squared_error", metrics=["mean_squared_error"])
 
         return model
