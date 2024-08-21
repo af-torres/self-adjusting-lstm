@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 
 
-from sklearn.preprocessing import StandardScaler
 from model.builder import Builder
 from model.layers import setModelLayersHook, setInputShapeHook
 from tuner.bayesopt import BayesOpt, Continuous, Discrete, OptimizableFunction
